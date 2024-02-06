@@ -52,3 +52,54 @@ x==========x]
 [2024-01-30 19:26:54,096: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
 
 x==========x]
+[2024-02-06 15:28:44,746: INFO: main: Welcome]
+[2024-02-06 15:28:44,746: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-06 15:28:44,748: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-06 15:28:44,749: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-06 15:28:44,750: INFO: common: created directory at: artifacts]
+[2024-02-06 15:28:44,750: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-06 15:28:44,751: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vBlUgdgRwatfrjFT9f8wplE2cKITzdwt/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-06 15:29:58,363: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vBlUgdgRwatfrjFT9f8wplE2cKITzdwt/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-06 15:30:16,592: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-02-06 15:30:16,593: INFO: main: *******************]
+[2024-02-06 15:30:16,594: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-02-06 15:30:16,596: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-06 15:30:16,597: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-06 15:30:16,598: INFO: common: created directory at: artifacts]
+[2024-02-06 15:30:16,599: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-02-06 15:30:22,668: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-02-06 15:30:22,853: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-02-06 16:06:10,959: INFO: main: Welcome]
+[2024-02-06 16:06:10,959: INFO: main: *******************]
+[2024-02-06 16:06:10,960: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-02-06 16:06:10,962: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-06 16:06:10,963: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-06 16:06:10,964: INFO: common: created directory at: artifacts]
+[2024-02-06 16:06:10,964: INFO: common: created directory at: artifacts\training]
+[2024-02-06 16:06:11,315: ERROR: main: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\kidney-ct-scan-image']
+Traceback (most recent call last):
+  File "d:\Projects\Kidney_disease_classifier\main.py", line 33, in <module>
+    model_trainer.main()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\stage_03_model_training.py", line 20, in main
+    training.train_valid_generator()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\model_training.py", line 37, in train_valid_generator
+    self.valid_generator = valid_datagenerator.flow_from_directory(
+  File "D:\Projects\env1\lib\site-packages\keras\preprocessing\image.py", line 1648, in flow_from_directory
+    return DirectoryIterator(
+  File "D:\Projects\env1\lib\site-packages\keras\preprocessing\image.py", line 563, in __init__
+    for subdir in sorted(os.listdir(directory)):
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'artifacts\\data_ingestion\\kidney-ct-scan-image'
+[2024-02-06 16:07:54,357: INFO: main: Welcome]
+[2024-02-06 16:07:54,357: INFO: main: *******************]
+[2024-02-06 16:07:54,358: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-02-06 16:07:54,359: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-06 16:07:54,361: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-06 16:07:54,362: INFO: common: created directory at: artifacts]
+[2024-02-06 16:07:54,362: INFO: common: created directory at: artifacts\training]
+[2024-02-06 16:19:57,933: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
