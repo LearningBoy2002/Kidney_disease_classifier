@@ -103,3 +103,50 @@ FileNotFoundError: [WinError 3] The system cannot find the path specified: 'arti
 [2024-02-06 16:19:57,933: INFO: main: >>>>>> stage Training completed <<<<<<
 
 x==========x]
+[2024-02-07 17:09:44,970: INFO: main: Welcome]
+[2024-02-07 17:09:44,970: INFO: main: *******************]
+[2024-02-07 17:09:44,970: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-02-07 17:09:44,970: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-07 17:09:44,970: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-07 17:09:44,970: INFO: common: created directory at: artifacts]
+[2024-02-07 17:09:44,970: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-02-07 17:09:45,411: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-02-07 17:09:45,716: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-02-07 17:09:45,717: INFO: main: *******************]
+[2024-02-07 17:09:45,717: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-02-07 17:09:45,717: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-07 17:09:45,717: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-07 17:09:45,717: INFO: common: created directory at: artifacts]
+[2024-02-07 17:09:45,717: INFO: common: created directory at: artifacts\training]
+[2024-02-07 17:21:44,128: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-02-07 17:21:44,129: INFO: main: *******************]
+[2024-02-07 17:21:44,129: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-07 17:21:44,131: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-07 17:21:44,133: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-07 17:21:44,134: INFO: common: created directory at: artifacts]
+[2024-02-07 17:25:24,680: INFO: common: json file saved at: scores.json]
+[2024-02-07 17:25:24,680: INFO: common: json file saved at: scores.json]
+[2024-02-07 17:25:24,680: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-02-07 20:27:32,795: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-07 20:27:32,799: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-07 20:27:32,800: INFO: common: created directory at: artifacts]
+[2024-02-07 20:31:44,344: INFO: common: json file saved at: scores.json]
+[2024-02-07 20:31:47,380: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-02-07 20:31:47,986: INFO: builder_impl: Assets written to: C:\Users\bishw\AppData\Local\Temp\tmpuvwvhg37\model\data\model\assets]
+[2024-02-07 22:59:09,225: INFO: main: Welcome]
+[2024-02-07 22:59:09,225: INFO: main: *******************]
+[2024-02-07 22:59:09,225: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-07 22:59:09,225: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-07 22:59:09,225: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-07 22:59:09,225: INFO: common: created directory at: artifacts]
+[2024-02-07 23:02:48,068: INFO: common: json file saved at: scores.json]
+[2024-02-07 23:02:48,068: INFO: common: json file saved at: scores.json]
+[2024-02-07 23:02:48,069: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]

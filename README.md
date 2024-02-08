@@ -1,1 +1,6 @@
 # Kidney_disease_classifier
+
+export MLFLOW_TRACKING_URI=https://dagshub.com/LearningBoy2002/Kidney_disease_classifier.mlflow 
+export MLFLOW_TRACKING_USERNAME=LearningBoy2002 
+export MLFLOW_TRACKING_PASSWORD=753753fd60ce6431bb15e432e49691d0bc9631cd 
+python script.py
