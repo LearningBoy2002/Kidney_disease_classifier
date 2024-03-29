@@ -373,3 +373,900 @@ x==========x]
 [2024-02-12 12:51:39,393: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-02-12 20:26:36,459: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.109.152:8080]
+[2024-02-12 20:26:36,459: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 20:26:42,652: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:26:42] "GET / HTTP/1.1" 200 -]
+[2024-02-12 20:27:19,788: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-02-12 20:27:19,794: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:27:19] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 20:30:43,805: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.109.152:8080]
+[2024-02-12 20:30:43,806: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 20:30:46,762: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:30:46] "GET / HTTP/1.1" 200 -]
+[2024-02-12 20:30:57,561: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:30:57] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 20:31:25,297: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:31:25] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 20:32:08,363: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:32:08] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 20:32:29,170: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 20:32:29] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 20:35:24,560: INFO: stage_03_model_training: *******************]
+[2024-02-12 20:35:24,560: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-02-12 20:35:24,560: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-12 20:35:24,560: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-12 20:35:24,560: INFO: common: created directory at: artifacts]
+[2024-02-12 20:35:24,560: INFO: common: created directory at: artifacts\training]
+[2024-02-12 22:14:34,861: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-02-12 22:14:57,107: INFO: stage_04_model_evaluation: *******************]
+[2024-02-12 22:14:57,107: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-12 22:14:57,107: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-12 22:14:57,118: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-12 22:14:57,119: INFO: common: created directory at: artifacts]
+[2024-02-12 22:15:53,209: INFO: common: json file saved at: scores.json]
+[2024-02-12 22:15:53,209: INFO: common: json file saved at: scores.json]
+[2024-02-12 22:15:56,978: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2024-02-12 22:15:57,628: INFO: builder_impl: Assets written to: C:\Users\bishw\AppData\Local\Temp\tmpu8xnc9sd\model\data\model\assets]
+[2024-02-12 22:17:30,448: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-02-12 22:58:11,460: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 22:58:11,460: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 22:58:16,020: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 22:58:16] "GET / HTTP/1.1" 200 -]
+[2024-02-12 22:58:38,267: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 37, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-02-12 22:58:38,272: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 22:58:38] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:00:22,761: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:00:22,761: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:00:31,094: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:00:31] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:00:47,624: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:00:47] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:04:31,035: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:04:31,035: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:04:33,924: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:04:33] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:04:47,444: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 50, in predict
+    print("/\/" + predicted_class + "/\/")
+TypeError: can only concatenate str (not "numpy.int64") to str
+[2024-02-12 23:04:47,444: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:04:47] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:05:57,292: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:05:57] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:06:02,529: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 50, in predict
+    print("ll" + predicted_class + "ll")
+TypeError: can only concatenate str (not "numpy.int64") to str
+[2024-02-12 23:06:02,529: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:06:02] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:06:43,098: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:06:43] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:06:44,039: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:06:44] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:06:49,705: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 50, in predict
+    print( predicted_class )
+TypeError: can only concatenate str (not "numpy.int64") to str
+[2024-02-12 23:06:49,706: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:06:49] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:08:53,220: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:08:53] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:08:58,205: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 50, in predict
+    print("ll" + result + "ll")
+TypeError: can only concatenate str (not "numpy.int64") to str
+[2024-02-12 23:08:58,221: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:08:58] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:09:26,710: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:09:26] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:09:32,051: WARNING: def_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001F676C74790> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-02-12 23:09:32,236: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 50, in predict
+    class_names = ["Cyst", "Normal", "Stone", "Tumor"]  # Update with your actual class names
+TypeError: can only concatenate str (not "numpy.int64") to str
+[2024-02-12 23:09:32,236: INFO: _internal: 192.168.221.143 - - [12/Feb/2024 23:09:32] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:10:01,523: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:10:01,523: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:10:04,391: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:10:04] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:10:13,232: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\Projects\Kidney_disease_classifier\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\pipeline\prediction.py", line 50, in predict
+    print("ll" + result + "ll")
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'add' did not contain a loop with signature matching types (dtype('<U2'), dtype('int64')) -> None
+[2024-02-12 23:10:13,232: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:10:13] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-02-12 23:11:17,201: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:11:17,201: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:11:22,286: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:11:22] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:11:34,014: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:11:34] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:12:13,303: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:12:13] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:12:18,253: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:12:18] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:24:52,405: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:24:52,405: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:24:57,175: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:24:57] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:25:08,052: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:25:08] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:25:45,498: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:25:45] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:25:50,466: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:25:50] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:26:04,536: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:26:04,537: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:26:10,877: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:26:10] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:26:21,679: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:26:21] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:26:44,560: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:26:44] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:27:07,226: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-12 23:27:07,226: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-12 23:27:15,693: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:27:15] "GET / HTTP/1.1" 200 -]
+[2024-02-12 23:27:57,484: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:27:57] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:28:29,071: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:28:29] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:28:44,753: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:28:44] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:28:57,357: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:28:57] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:29:09,928: WARNING: def_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002065C1C1AB0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-02-12 23:29:10,111: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:29:10] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:29:30,286: WARNING: def_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002065C1C1AB0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-02-12 23:29:30,453: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:29:30] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:32:06,394: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:32:06] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:32:26,586: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:32:26] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:32:41,608: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:32:41] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:32:51,264: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:32:51] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:33:07,068: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:33:07] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:33:22,774: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:33:22] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:33:40,997: INFO: _internal: 127.0.0.1 - - [12/Feb/2024 23:33:40] "POST /predict HTTP/1.1" 200 -]
+[2024-02-12 23:40:11,232: INFO: stage_03_model_training: *******************]
+[2024-02-12 23:40:11,232: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-02-12 23:40:11,243: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-12 23:40:11,245: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-12 23:40:11,246: INFO: common: created directory at: artifacts]
+[2024-02-12 23:40:11,246: INFO: common: created directory at: artifacts\training]
+[2024-02-12 23:45:53,568: INFO: stage_03_model_training: *******************]
+[2024-02-12 23:45:53,568: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-02-12 23:45:53,584: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-12 23:45:53,584: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-12 23:45:53,584: INFO: common: created directory at: artifacts]
+[2024-02-12 23:45:53,584: INFO: common: created directory at: artifacts\training]
+[2024-02-12 23:51:00,845: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-02-12 23:51:24,111: INFO: stage_04_model_evaluation: *******************]
+[2024-02-12 23:51:24,112: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-12 23:51:24,114: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-12 23:51:24,116: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-12 23:51:24,117: INFO: common: created directory at: artifacts]
+[2024-02-12 23:52:07,810: INFO: common: json file saved at: scores.json]
+[2024-02-12 23:52:07,810: INFO: common: json file saved at: scores.json]
+[2024-02-12 23:52:11,840: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2024-02-12 23:52:12,545: INFO: builder_impl: Assets written to: C:\Users\bishw\AppData\Local\Temp\tmpeur5dk2d\model\data\model\assets]
+[2024-02-12 23:58:47,669: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-02-13 01:30:52,189: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.148.86:8080]
+[2024-02-13 01:30:52,189: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-13 01:30:55,061: INFO: _internal: 127.0.0.1 - - [13/Feb/2024 01:30:55] "GET / HTTP/1.1" 200 -]
+[2024-02-13 01:31:28,925: INFO: _internal: 127.0.0.1 - - [13/Feb/2024 01:31:28] "POST /predict HTTP/1.1" 200 -]
+[2024-02-13 01:34:01,547: INFO: stage_03_model_training: *******************]
+[2024-02-13 01:34:01,547: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-02-13 01:34:01,562: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 01:34:01,562: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 01:34:01,562: INFO: common: created directory at: artifacts]
+[2024-02-13 01:34:01,562: INFO: common: created directory at: artifacts\training]
+[2024-02-13 05:41:55,467: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-02-13 05:42:21,797: INFO: stage_04_model_evaluation: *******************]
+[2024-02-13 05:42:21,797: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-13 05:42:21,799: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 05:42:21,801: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 05:42:21,801: INFO: common: created directory at: artifacts]
+[2024-02-13 05:43:26,112: INFO: common: json file saved at: scores.json]
+[2024-02-13 05:43:26,112: INFO: common: json file saved at: scores.json]
+[2024-02-13 05:43:31,797: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2024-02-13 05:43:32,549: INFO: builder_impl: Assets written to: C:\Users\bishw\AppData\Local\Temp\tmpwi7m_h0t\model\data\model\assets]
+[2024-02-13 05:44:48,243: WARNING: connectionpool: Retrying (Retry(total=4, connect=5, read=5, redirect=5, status=5)) after connection broken by 'SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2426)')': /LearningBoy2002/Kidney_disease_classifier.mlflow/api/2.0/mlflow-artifacts/artifacts/565b66c317f44924b6c516d534059913/99ab8d9e63a549a5891269e0f0720c92/artifacts/model/data/model/variables/variables.data-00000-of-00001]
+[2024-02-13 05:46:07,297: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-02-13 12:15:50,329: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.221.143:8080]
+[2024-02-13 12:15:50,345: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-02-13 12:16:17,940: INFO: _internal: 127.0.0.1 - - [13/Feb/2024 12:16:17] "GET / HTTP/1.1" 200 -]
+[2024-02-13 12:16:30,577: INFO: _internal: 127.0.0.1 - - [13/Feb/2024 12:16:30] "POST /predict HTTP/1.1" 200 -]
+[2024-02-13 13:07:19,073: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 13:07:19,075: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 13:07:19,078: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 13:07:19,079: INFO: common: created directory at: artifacts]
+[2024-02-13 13:07:19,079: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 13:07:19,080: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 13:07:20,289: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 52, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(error)
+gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file. If you still can't access a file after 24 hours, contact your domain administrator.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-13 13:07:37,802: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 13:07:37,806: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 13:07:37,808: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 13:07:37,808: INFO: common: created directory at: artifacts]
+[2024-02-13 13:07:37,808: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 13:07:37,809: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 13:07:38,951: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 52, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(error)
+gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file. If you still can't access a file after 24 hours, contact your domain administrator.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-13 13:09:17,343: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 13:09:17,343: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 13:09:17,343: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 13:09:17,343: INFO: common: created directory at: artifacts]
+[2024-02-13 13:09:17,343: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 13:09:17,343: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-02-13 13:09:18,980: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 52, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(error)
+gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file. If you still can't access a file after 24 hours, contact your domain administrator.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-13 13:10:29,924: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 13:10:29,924: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 13:10:29,924: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 13:10:29,924: INFO: common: created directory at: artifacts]
+[2024-02-13 13:10:29,940: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 13:10:29,940: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 13:10:31,007: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 52, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(error)
+gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file. If you still can't access a file after 24 hours, contact your domain administrator.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-13 13:11:56,838: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 13:11:56,838: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 13:11:56,838: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 13:11:56,838: INFO: common: created directory at: artifacts]
+[2024-02-13 13:11:56,838: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 13:11:56,838: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 13:11:57,906: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 52, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(error)
+gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file. If you still can't access a file after 24 hours, contact your domain administrator.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-13 14:43:38,833: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 14:43:38,833: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 14:43:38,833: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 14:43:38,833: INFO: common: created directory at: artifacts]
+[2024-02-13 14:43:38,833: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 14:43:38,833: INFO: data_ingestion: Downloading data from https://drive.google.com/drive/u/0/folders/1sThTSKsMjRKc-IgJ3fagTeNx4E6a9d3m/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 14:43:40,973: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1sThTSKsMjRKc-IgJ3fagTeNx4E6a9d3m
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 54, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(
+gdown.exceptions.FileURLRetrievalError: Cannot retrieve the public link of the file. You may need to change the permission to 'Anyone with the link', or have had many accesses. Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1sThTSKsMjRKc-IgJ3fagTeNx4E6a9d3m
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-13 14:46:05,412: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 14:46:05,417: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 14:46:05,419: INFO: common: created directory at: artifacts]
+[2024-02-13 14:46:05,421: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 14:46:05,423: INFO: 986331348: Downloading data from https://drive.google.com/drive/u/0/folders/1sThTSKsMjRKc-IgJ3fagTeNx4E6a9d3m/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 14:49:01,108: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-13 14:49:01,108: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-13 14:49:01,108: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-13 14:49:01,108: INFO: common: created directory at: artifacts]
+[2024-02-13 14:49:01,108: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-13 14:49:01,108: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-13 14:49:01,975: ERROR: stage_01_data_ingestion: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 52, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(error)
+gdown.exceptions.FileURLRetrievalError: Too many users have viewed or downloaded this file recently. Please try accessing the file again later. If the file you are trying to access is particularly large or is shared with many people, it may take up to 24 hours to be able to view or download the file. If you still can't access a file after 24 hours, contact your domain administrator.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Too many users have viewed or downloaded this file recently. Please
+	try accessing the file again later. If the file you are trying to
+	access is particularly large or is shared with many people, it may
+	take up to 24 hours to be able to view or download the file. If you
+	still can't access a file after 24 hours, contact your domain
+	administrator.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3
+
+but Gdown can't. Please check connections and permissions.
+[2024-02-18 11:43:16,305: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-18 11:43:16,308: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 11:43:16,310: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 11:43:16,310: INFO: common: created directory at: artifacts]
+[2024-02-18 11:43:16,311: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-18 11:43:16,311: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-18 11:44:16,287: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-18 11:44:24,121: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-02-18 12:11:20,696: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-18 12:11:20,699: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 12:11:20,701: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 12:11:20,701: INFO: common: created directory at: artifacts]
+[2024-02-18 12:11:20,701: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-18 12:11:20,702: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-18 12:12:21,522: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-18 12:12:28,328: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-02-18 12:14:20,116: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-02-18 12:14:20,119: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 12:14:20,121: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 12:14:20,121: INFO: common: created directory at: artifacts]
+[2024-02-18 12:14:20,121: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-02-18 12:14:20,122: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-18 12:14:50,451: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-02-18 12:15:01,951: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-02-18 12:16:43,394: INFO: stage_02_prepare_base_model: *******************]
+[2024-02-18 12:16:43,395: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2024-02-18 12:16:43,397: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 12:16:43,401: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 12:16:43,402: INFO: common: created directory at: artifacts]
+[2024-02-18 12:16:43,403: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-02-18 12:16:50,235: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-02-18 12:16:50,610: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-02-18 12:17:20,196: INFO: stage_03_model_training: *******************]
+[2024-02-18 12:17:20,197: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-02-18 12:17:20,199: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 12:17:20,201: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 12:17:20,202: INFO: common: created directory at: artifacts]
+[2024-02-18 12:17:20,203: INFO: common: created directory at: artifacts\training]
+[2024-02-18 14:40:06,947: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-02-18 16:19:57,017: INFO: stage_04_model_evaluation: *******************]
+[2024-02-18 16:19:57,017: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-18 16:19:57,020: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 16:19:57,022: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 16:19:57,022: INFO: common: created directory at: artifacts]
+[2024-02-18 16:19:58,292: ERROR: stage_04_model_evaluation: [WinError 3] The system cannot find the path specified: 'artifacts/data_ingestion/Datasets']
+Traceback (most recent call last):
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_04_model_evaluation.py", line 30, in <module>
+    obj.main()
+  File "D:\Projects\Kidney_disease_classifier\src\cnnClassifier\pipeline\stage_04_model_evaluation.py", line 18, in main
+    evaluation.evaluation()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\model_evaluation_mlflow.py", line 47, in evaluation
+    self._valid_generator()
+  File "d:\projects\kidney_disease_classifier\src\cnnClassifier\components\model_evaluation_mlflow.py", line 32, in _valid_generator
+    self.valid_generator = valid_datagenerator.flow_from_directory(
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\keras\preprocessing\image.py", line 1650, in flow_from_directory
+    return DirectoryIterator(
+  File "C:\Users\bishw\anaconda3\envs\env2\lib\site-packages\keras\preprocessing\image.py", line 563, in __init__
+    for subdir in sorted(os.listdir(directory)):
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'artifacts/data_ingestion/Datasets'
+[2024-02-18 16:40:27,398: INFO: stage_04_model_evaluation: *******************]
+[2024-02-18 16:40:27,399: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-02-18 16:40:27,402: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-02-18 16:40:27,404: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-18 16:40:27,404: INFO: common: created directory at: artifacts]
+[2024-02-18 16:41:07,301: INFO: common: json file saved at: scores.json]
+[2024-02-18 16:41:07,302: INFO: common: json file saved at: scores.json]
+[2024-02-18 16:41:10,786: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2024-02-18 16:41:11,524: INFO: builder_impl: Assets written to: C:\Users\bishw\AppData\Local\Temp\tmpff4s0xk_\model\data\model\assets]
+[2024-02-18 16:42:44,360: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-03-29 16:00:23,702: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.150.86:8080]
+[2024-03-29 16:00:23,703: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-29 16:21:39,708: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:21:39] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:23:04,320: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:23:04] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:23:05,737: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:23:05] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:23:14,746: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:23:14] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:12,466: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:12] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:13,432: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:13] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:13,630: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:13] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:13,808: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:13] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:13,994: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:13] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:14,497: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:14] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:14,695: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:24:14] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:22,804: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 16:24:22] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:24:59,731: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 16:24:59] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:25:00,674: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 16:25:00] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:25:01,239: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 16:25:01] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:25:02,191: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 16:25:02] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:25:02,966: INFO: _internal: 127.0.0.1 - - [29/Mar/2024 16:25:02] "GET / HTTP/1.1" 200 -]
+[2024-03-29 16:25:17,084: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.150.86:8080]
+[2024-03-29 16:25:17,084: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-29 16:25:20,171: INFO: _internal: 192.168.150.86 - - [29/Mar/2024 16:25:20] "GET / HTTP/1.1" 200 -]
+[2024-03-29 20:06:58,291: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-03-29 20:06:58,294: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-29 20:06:58,296: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-29 20:06:58,297: INFO: common: created directory at: artifacts]
+[2024-03-29 20:06:58,297: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-29 20:06:58,298: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-03-29 20:07:54,468: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1d0zalNYOC9czG65IBz8tBRzKGwXOZAA3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-03-29 20:08:02,861: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-03-29 20:08:45,612: INFO: stage_02_prepare_base_model: *******************]
+[2024-03-29 20:08:45,612: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2024-03-29 20:08:45,615: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-29 20:08:45,617: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-29 20:08:45,617: INFO: common: created directory at: artifacts]
+[2024-03-29 20:08:45,617: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-03-29 20:09:00,206: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-03-29 20:09:00,477: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-03-29 20:09:10,474: INFO: stage_03_model_training: *******************]
+[2024-03-29 20:09:10,474: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2024-03-29 20:09:10,477: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-29 20:09:10,479: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-29 20:09:10,479: INFO: common: created directory at: artifacts]
+[2024-03-29 20:09:10,480: INFO: common: created directory at: artifacts\training]
+[2024-03-29 22:35:26,994: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-03-29 22:35:46,441: INFO: stage_04_model_evaluation: *******************]
+[2024-03-29 22:35:46,441: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-03-29 22:35:46,451: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-29 22:35:46,451: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-29 22:35:46,451: INFO: common: created directory at: artifacts]
+[2024-03-29 22:36:29,914: INFO: common: json file saved at: scores.json]
+[2024-03-29 22:36:29,915: INFO: common: json file saved at: scores.json]
+[2024-03-29 22:36:34,971: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2024-03-29 22:36:35,728: INFO: builder_impl: Assets written to: C:\Users\bishw\AppData\Local\Temp\tmpebj5etmv\model\data\model\assets]
+[2024-03-29 22:38:02,532: WARNING: connectionpool: Retrying (Retry(total=4, connect=5, read=5, redirect=5, status=5)) after connection broken by 'SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2426)')': /LearningBoy2002/Kidney_disease_classifier.mlflow/api/2.0/mlflow-artifacts/artifacts/565b66c317f44924b6c516d534059913/e84bc0fdf3aa42bf93f7be9eda5a8f8a/artifacts/model/data/model/variables/variables.data-00000-of-00001]
+[2024-03-29 22:41:56,250: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-03-30 02:37:46,128: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.150.86:8080]
+[2024-03-30 02:37:46,128: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-30 02:37:49,351: INFO: _internal: 192.168.150.86 - - [30/Mar/2024 02:37:49] "GET / HTTP/1.1" 200 -]
+[2024-03-30 02:38:14,612: INFO: _internal: 192.168.150.86 - - [30/Mar/2024 02:38:14] "POST /predict HTTP/1.1" 200 -]
+[2024-03-30 02:38:24,440: INFO: _internal: 192.168.150.86 - - [30/Mar/2024 02:38:24] "POST /predict HTTP/1.1" 200 -]
+[2024-03-30 02:49:03,384: INFO: _internal: 192.168.150.86 - - [30/Mar/2024 02:49:03] "GET / HTTP/1.1" 200 -]
+[2024-03-30 02:49:33,286: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.150.86:8080]
+[2024-03-30 02:49:33,286: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-30 02:49:36,141: INFO: _internal: 192.168.150.86 - - [30/Mar/2024 02:49:36] "GET / HTTP/1.1" 200 -]
+[2024-03-30 02:49:51,695: INFO: _internal: 192.168.150.86 - - [30/Mar/2024 02:49:51] "POST /predict HTTP/1.1" 200 -]
+[2024-03-30 02:53:59,156: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.150.86:8080]
+[2024-03-30 02:53:59,156: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-30 02:54:02,514: INFO: _internal: 127.0.0.1 - - [30/Mar/2024 02:54:02] "GET / HTTP/1.1" 200 -]
+[2024-03-30 02:54:16,238: INFO: _internal: 127.0.0.1 - - [30/Mar/2024 02:54:16] "POST /predict HTTP/1.1" 200 -]
