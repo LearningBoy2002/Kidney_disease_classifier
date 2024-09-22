@@ -1,3 +1,6 @@
 artifacts/*
 .dvcignore
 scores.json
+.jpg
+
+
