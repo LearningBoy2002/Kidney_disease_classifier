@@ -97,8 +97,7 @@ Kidney_disease_classifier/
 - This project was deployed **temporarily** on AWS EC2 as it was a personal project.
 - The **AWS Free Tier** has limitations, so the deployment was not permanent.
 
-## Author
-Developed by [Bishwarup Biswas](https://www.linkedin.com/in/bishwarup-b-0230a6248/).
+
 
 
 
